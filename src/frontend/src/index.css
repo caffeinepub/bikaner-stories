@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Cream/sand background */
+    --background: 0.94 0.03 80;
+    --foreground: 0.15 0.01 30;
+
+    /* Card: off-white */
+    --card: 0.96 0.02 75;
+    --card-foreground: 0.15 0.01 30;
+
+    /* Popover */
+    --popover: 0.96 0.02 75;
+    --popover-foreground: 0.15 0.01 30;
+
+    /* Primary: deep navy #0B2B63 */
+    --primary: 0.28 0.09 260;
+    --primary-foreground: 0.98 0 0;
+
+    /* Secondary: royal blue #1E3F7A */
+    --secondary: 0.34 0.1 258;
+    --secondary-foreground: 0.98 0 0;
+
+    /* Muted */
+    --muted: 0.91 0.02 75;
+    --muted-foreground: 0.45 0.02 50;
+
+    /* Accent: gold #C8A15A */
+    --accent: 0.72 0.12 72;
+    --accent-foreground: 0.15 0.01 30;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Borders */
+    --border: 0.82 0.04 75;
+    --input: 0.82 0.04 75;
+    --ring: 0.72 0.12 72;
+
+    /* Orange accent #C86412 */
+    --orange: 0.6 0.16 45;
+    --orange-foreground: 0.98 0 0;
+
+    /* Gold decorative */
+    --gold: 0.72 0.12 72;
+
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.28 0.09 260;
+    --sidebar-foreground: 0.98 0 0;
+    --sidebar-primary: 0.98 0 0;
+    --sidebar-primary-foreground: 0.28 0.09 260;
+    --sidebar-accent: 0.34 0.1 258;
+    --sidebar-accent-foreground: 0.98 0 0;
+    --sidebar-border: 0.4 0.06 260;
+    --sidebar-ring: 0.72 0.12 72;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
+
+  .font-sans {
+    font-family: "Inter", sans-serif;
+  }
+
+  /* Rajasthani geometric border pattern */
+  .rajasthani-border {
+    position: relative;
+  }
+
+  .rajasthani-border::before,
+  .rajasthani-border::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    background-image: repeating-linear-gradient(
+        180deg,
+        oklch(0.72 0.12 72 / 0.4) 0px,
+        oklch(0.72 0.12 72 / 0.4) 2px,
+        transparent 2px,
+        transparent 8px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        oklch(0.72 0.12 72 / 0.3) 0px,
+        oklch(0.72 0.12 72 / 0.3) 2px,
+        transparent 2px,
+        transparent 8px
+      );
+  }
+
+  .rajasthani-border::before {
+    left: 0;
+  }
+
+  .rajasthani-border::after {
+    right: 0;
+  }
+
+  .ornate-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .ornate-divider::before,
+  .ornate-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      oklch(0.72 0.12 72),
+      transparent
+    );
+  }
+
+  .section-eyebrow {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+}
